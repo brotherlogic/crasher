@@ -32,7 +32,7 @@ func (s *Server) Mote(master bool) error {
 }
 
 func crash() {
-	time.Sleep(time.Hour)
+	time.Sleep(time.Minute * 5)
 	panic("Whoopsie")
 }
 
