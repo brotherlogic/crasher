@@ -4,6 +4,7 @@ import (
 	"flag"
 	"io/ioutil"
 	"log"
+	"time"
 
 	"github.com/brotherlogic/goserver"
 	"google.golang.org/grpc"
@@ -31,7 +32,7 @@ func (s *Server) Mote(master bool) error {
 }
 
 func crash() {
-	//time.Sleep(time.Hour)
+	time.Sleep(time.Hour)
 	panic("Whoopsie")
 }
 
