@@ -8,6 +8,8 @@ import (
 
 	"github.com/brotherlogic/goserver"
 	"google.golang.org/grpc"
+
+	pbgs "github.com/brotherlogic/goserver/proto"
 )
 
 //Server main server type
@@ -29,6 +31,12 @@ func (s *Server) ReportHealth() bool {
 func (s *Server) Mote(master bool) error {
 	//No mote
 	return nil
+}
+
+//GetState gets the state of the server
+func (s *Server) GetState() []*pbgs.State {
+	return []*pbgs.State{}
+
 }
 
 func crash() {
