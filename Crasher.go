@@ -7,6 +7,7 @@ import (
 	"time"
 
 	"github.com/brotherlogic/goserver"
+	"golang.org/x/net/context"
 	"google.golang.org/grpc"
 
 	pbgs "github.com/brotherlogic/goserver/proto"
@@ -39,7 +40,7 @@ func (s *Server) GetState() []*pbgs.State {
 
 }
 
-func crash() {
+func crash(ctx context.Context) {
 	time.Sleep(time.Minute * 5)
 	panic("Whoopsie")
 }
