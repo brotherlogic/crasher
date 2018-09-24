@@ -29,7 +29,7 @@ func (s *Server) ReportHealth() bool {
 }
 
 // Mote promotes this server
-func (s *Server) Mote(master bool) error {
+func (s *Server) Mote(ctx context.Context, master bool) error {
 	//No mote
 	return nil
 }
