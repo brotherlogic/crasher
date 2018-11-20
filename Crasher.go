@@ -59,6 +59,6 @@ func main() {
 	server.PrepServer()
 	server.RegisterServer("crasher", false)
 	server.Log("Beerserver has started!")
-	server.RegisterServingTask(crash)
+	server.RegisterServingTask(crash, "crash")
 	server.Serve()
 }
