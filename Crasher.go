@@ -45,9 +45,10 @@ func (s *Server) GetState() []*pbgs.State {
 
 }
 
-func crash(ctx context.Context) {
+func crash(ctx context.Context) error {
 	time.Sleep(time.Minute * 5)
 	panic("Whoopsie")
+	return nil
 }
 
 func main() {
