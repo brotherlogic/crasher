@@ -13,7 +13,7 @@ import (
 	pbgs "github.com/brotherlogic/goserver/proto"
 )
 
-//Server main server type
+// Server main server type
 type Server struct {
 	*goserver.GoServer
 }
@@ -39,7 +39,7 @@ func (s *Server) Mote(ctx context.Context, master bool) error {
 	return nil
 }
 
-//GetState gets the state of the server
+// GetState gets the state of the server
 func (s *Server) GetState() []*pbgs.State {
 	return []*pbgs.State{}
 
@@ -62,9 +62,8 @@ func main() {
 
 	server := &Server{&goserver.GoServer{}}
 	server.Register = server
-	server.PrepServer()
-	server.RegisterServer("crasher", false)
-	server.Log("Beerserver has started!")
+	server.PrepServer("crasher")
+	server.RegisterServerV2(false)
 	server.RegisterServingTask(crash, "crash")
 	server.Serve()
 }
