@@ -1,0 +1,11 @@
+syntax = "proto3";
+
+package crasher;
+
+message CrashRequest {}
+
+message CrashResponse {}
+
+service CrashService {
+  rpc Crash(CrashRequest) returns (CrashResponse) {};
+}
